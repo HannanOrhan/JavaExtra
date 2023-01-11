@@ -18,5 +18,7 @@ public class MapMethods_contains {
 
         map.put("companyName","Cydeo");
         System.out.println(map.containsKey("companyName"));//true
+
+        System.out.println(map.containsValue("Bell"));
     }
 }
