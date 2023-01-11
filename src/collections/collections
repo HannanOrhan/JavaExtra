@@ -62,7 +62,24 @@ Collection1 = Student1, Student2, Student3 .....Student9
                         Constructor is empty
 
 
+ SET(I) : Does not allow duplicates - all
+          Accepts null except TreeSet
+          Does not have index
+          Insertion order not preserved
 
+        HashSet(C) : Random order
+                     Faster than other Set classes - because of random order
+                     Accepts null
+                     No duplicate
+
+
+            LinkedHashSet(C) : Child of HashSet(C)
+                               Insertion order
+                               Accepts null
+                               X duplicates
+
+        SortedSet(I) :
+            TreeSet(C) :
 
   PROCESS : An instance of a program running on a computer
             A process has code, data, heap and other segments
