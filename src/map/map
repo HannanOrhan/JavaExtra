@@ -1,0 +1,43 @@
+ ------------------------------ MAPS (I)---------------------------- import java.util.Map; ------------------------
+
+        Collection of pairs (pair : key + value) , accepts 2 data
+        ONLY accepts pair
+        Does not Is-A relation with Collection
+        Size is dynamic
+        Key is unique(can not be duplicate), values can be duplicate
+        Supports non-primitives
+        *Key like index number
+
+            Key     Value
+            -----    ------
+            name     Muhtar
+            gender   Male
+            age      32
+            ...      ....
+
+
+         MAP(I)  : -HashMap(C) -> -LinkedHashMap(C)
+                                     -Hashtable(C)
+
+                                     -SortedMap(I) -> TreeMap(C)
+
+
+
+                 HashMap(C) : Random order
+                              Accepts null key & values
+                              Not Synchronized
+
+                         LinkedHashMap(C) : Child of HashMap
+                                            Insertion order
+                                            Accepts null & values
+                                            Not Synchronized
+
+                 HashTable(C) : Random order
+                                Does not accept null key or values
+                                Synchronized -Thread safe, 1 thread at a time
+
+                 SortedHashMap(I) :
+
+                         TreeMap(C) : Sorted order
+                                      Does not accepts null key, accepts null values
+                                      Not Synchronized
