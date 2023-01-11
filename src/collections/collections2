@@ -1,0 +1,381 @@
+                                        COLLECTION-Interface
+
+    Defines several classes and interfaces which can be used to represent a group of objects as single entity
+    (Group of object of individual objects as a single entity.)
+    Size is dynamic.
+    It supports only non-primitives(objects).
+    Only collection has is-a relation with iterable.
+    It is provides additional methods.
+    It is standard data-structure and there are ready methods to use
+
+    --------------------------------------------COLLECTION METHODS------------------------------------------------------
+
+    Collection == Root interface
+    Collection interface defines the most common methods which applicable for any collection object.
+
+    size()            isEmpty()              add()
+    addAll()          remove()               removeAll()
+    removeIf()        contains()             containsAll()
+    retainAll()       clear()                toArray()
+
+     --------------------------------------------------------------------------------------------------------------------
+         NOTE : We can use constructor in order to cast one collection type to another
+                Except Stack because Stack's constructor is empty
+                We can use methods comes from reference type, if we want to use specific methods --> use downCasting
+
+
+                                         Iterable(Interface)
+                                         Collections(Interface)
+         List-I                            Queue-I                           Set-I
+         -----                            ----------                        ------
+         ArrayList-C                      -PriorityQueue-C                  -HashSet-C
+         LinkedList-C                     DeQue(Interface)                  -LinkedHashSet-C
+         Vector-C                         -ArrayDue-C                        SortedSet(interface)
+         Stack-C                                                             -TreeSet - C
+
+
+
+
+
+
+        LIST (I) : All of them accept null
+                   Has index number except LinkedList because LinkedList is node-based
+                   Duplicates are allowed for all
+                   Insertion order preserved for all
+
+
+               ArrayList adv :  sort and search the element is faster (), random access to the elements
+                                retrieving the element is faster
+                                Array based class(internally use array)
+                                Multi thread
+
+               LinkedList : accessing the element is slow  -- ONLY collection class implements multiple interface
+                            insertion & deletion are faster because LL is node based
+                            FIFO order, because implements Queue ( poll() from Queue )
+                            Linear searching run because of this reason accessing element slow(get)
+                            Null in first place
+                            Implements both "List" and "Queue > Deque" interfaces
+
+               Vector : Same as arrayList (internally uses Array)
+                        Synchronized = slower , one thread at a time, thread safe
+
+               Stack :  child of vector
+                        array based
+                        LIFO
+                        Ctrl + z or browser one back --> real life exmp.
+                        pop(), push()
+                        Constructor is empty
+
+        SET (I) :   Duplicates are not allowed --> common for all set child
+                    Insertion order not preserved, random order -> NO ORDER  not common depends
+                    Does not have index = NO ORDER -->  common for all set child
+                    Accepts null except TreeSet
+
+
+                HashSet (C) : Order is random
+                              fastest than other Set-child because of random order
+                              No duplication
+                              Accepts null
+
+
+                LinkedHashSet (C) :  Maintains the insertion order
+                                     Accepts null
+                                     No duplication
+                                     DIFFERENCE FROM : insertion order will be kept
+
+                TreeSet (C) :  No duplication
+                               Maintains the sorted order
+                               Does not accept null values
+
+
+
+        QUEUE (I) : Does not have index number  - for all *(except LinkedList)
+                    Insertion order not preserved
+                    Duplicates are allowed - for all
+                    FIFO ORDER - ticket or market line    real life exmp.
+                    *ONLY QUEUE HAS FIFO ORDER BETWEEN COLLECTION TYPES
+                    There is special method poll() --> return and remove first element
+
+
+
+                PriorityQueue (C) : Random order
+                                    no null
+                                    duplicates are allowed
+                                    no index number
+
+         Deque (I) : Maintain insertion order
+                     Does not accept null
+
+
+                ArrayDeque (C) : keeps insertion order
+                                 implicitly use array but we can not use get method
+                                 no index number
+
+            NOTE : Array list accepts null, have index number --> difference from the other queue classes
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+        Array VS Collections
+       ------------------------
+        Array faster > Collections
+        Array size fixed Collection dynamic
+        Array accepts both primitive and non-primitive
+        Collections only accept non-primitives
+
+     -------------------------------------------COLLECTION LIST---------------------------------------------------------
+
+    ------------------------------------------------LIST-INTERFACE------------------------------------------------------
+    Child interface of collection   ---> public interface List extends Collection {}
+    Duplicates are allowed
+    Insertion order preserved
+    Has index numbers (we are able to use get method)
+        Elements: 5,0,10,8,25
+        List = [5,0,10,8,25]
+
+    Has index number
+
+   * List extends Collection
+
+    public interface List extends Collection {} ---> implements by ArrayList, LinkedList, Vector classes
+
+     --------------------------------------------ARRAYLIST-CLASS--------------------------------------------------------
+     import java.uti.ArrayList;
+     import java.util.List;
+     public interface List extends Collection {}
+     class ArrayList implements List {}
+
+     Internally(implicitly) uses array
+     Retrieving the element is faster -- it makes arrayList different
+     It allows random access to the elements
+
+     HINT : Array based class
+     HINT : Benefit --> Retrieving the element is faster
+
+
+     -------------------------------------------LINKED-LIST-CLASS-------------------------------------------------------
+      import java.util.LinkedList
+      public interface List extends Collection {}
+      class LinkedList implements List, Queue {}
+
+      LinkedList does not use implicitly array
+      It is doubly linked list
+      Instead of array it uses "Node"
+      Implements the List interface
+      Every single value will have pointer to the next value
+      Insert and delete operations are faster
+      Retrieving elements not as fast as  array based class
+      It does not allow random access to the element
+      Each node will have 2 pointer for previous and next element
+
+
+      NODE: Every single node has pointer that shows next or previous node
+
+      HINT : Advantage : delete and add operations are faster
+             Disadvantage :  Retrieving elements not as fast as  array based class
+      HINT : Node based class
+
+     ----------------------------------------------VECTOR-CLASS---------------------------------------------------------
+      import java.util.Vector;
+      import java.util.List;
+
+      public interface List extends Collection {}
+      class Vector implements List {}
+
+      Internally uses array (It is technically array)
+      Is synchronized( thread-safe -> performance is going to slow )
+      Vector has a child class --> Stack Class
+
+
+      HINT: *There is only one difference between arrayList is that vector is synchronized
+      *Advantage of synchronized keyword over the method : in multi-thread environment one thread executed at a time
+       In array list all threads executed at the same time
+
+      Synchronized : One tread at a time.
+
+      Thread : It is subset. It is small sequence of a process which is running application.
+               Threads are created within the process
+
+      Process :  An instance of a program running on a computer
+
+    ----------------------------------------------STACK-CLASS-----------------------------------------------------------
+
+    class Stack<E> extends Vector<E>{}
+
+    Child of Vector
+    Stack methods also have synchronized keyword.
+    Last in, First out (LIFO)
+    Push() and Pop() methods to add and remove elements --> ONLY difference between Vector
+
+   -------------------------------------------COLLECTION SET------------------------------------------------------------
+
+   --------------------------------------------SET INTERFACE------------------------------------------------------------
+
+   import java.util.Set;
+
+   Child interface of Collection
+   Duplicates are not allowed
+   Insertion order not preserved -> NO ORDER
+   Does not have index = NO ORDER
+
+
+   ---------------------------------------------HASHSET CLASS-----------------------------------------------------------
+
+    import java.util.HashSet;
+
+    public class HashSet<E>
+        extends AbstractSet<E>
+        implements Set<E>, Cloneable, java.io.Serializable
+    {}
+
+    Implements the Set interface
+    Maintain random order
+    Accepts null
+
+  ---------------------------------------------LINKED-HASHSET CLASS-----------------------------------------------------
+
+   import java.util.LinkedList;
+
+   public class LinkedList<E>
+       extends AbstractSequentialList<E>
+       implements List<E>, Deque<E>, Cloneable, java.io.Serializable
+   {}
+
+   Child of HashSet
+   Maintains the insertion order
+   Accepts null
+
+ -----------------------------------------------TREE-SET CLASS----------------------------------------------------------
+  import java.util.TreeSet;
+
+    Removes the duplicates
+    Maintains the sorted order
+    Does not accept null values
+
+
+-------------------------------------------COLLECTION QUEUE-------------------------------------------------------------
+
+-------------------------------------------QUEUE INTERFACE--------------------------------------------------------------
+
+    import java.util.Queue
+
+    Collection > Queue > Priority(C)
+                       > Deque(I) > ArrayDeque(C)
+                                  > LinkedList(C)
+
+    Child interface of Collection
+    Allows duplicates
+    FIFO(First In, First Order)
+
+
+    Difference :  QUEUE                  VS        LIST
+                  No index number                   Has index number
+
+
+    NOTE :
+-------------------------------------------PriorityQueue INTERFACE------------------------------------------------------
+    import java.util.PriorityQueue
+
+    Child class of Queue interface
+    Maintains random order
+    Does not accept null
+
+----------------------------------------------DeQue INTERFACE-----------------------------------------------------------
+    import java.util.DeQue
+
+    Child interface of Queue interface
+    Maintain insertion order
+    Does not accept null
+
+
+------------------------------------------------------------------------------------------------------------------------
+      PROCESS : An instance of a program running on a computer
+                A process has code, data, heap and other segments
+
+      THREAD : A subset of process
+               A sequence of execution within a process
+               Every single process at least have one thread
+               it can be more than one thread within the process == multi-threading
+
+        We can create custom Thread class from :
+                        1.Thread Class
+                        2.Runnable Interface
+        Multi-Thread in java : Multiple thread objects are executed at the same time
+        Multi-tasking : Two or more process are running
+
+               ------------------------------------------------------------------------------
+                                            PROGRAM
+               Process1                     Process2                            Process3
+               -------                      --------                            -------
+               Thread1                      Thread1                             Thread1
+               Thread2                      Thread2                             Thread2
+               -------------------------------------------------------------------------------
+
+      SYNCHRONIZED (Thread safety): Process of controlling the access of multiple threads to any shared resource
+                                    It executes 1 thread at a time
+                                    Only one thread to access the shared resource at a time
+
+                                    resource : any application
+
+
+    SUMMARY============================================================================================================
+
+    Data-Structures:
+           1. Array
+           2. Collection
+           3. Map
+
+    Collection (I): - Size is dynamic
+                    - Only accepts object types(non-primitives)
+                    - It has 3 child interfaces :
+                            1. List (I) : only list has index number, allows duplicates
+                                          1.1. ArrayList : Array based class
+                                                          accessing/searching the elements are faster
+
+                                          1.2.  LinkedList : Node based class(doubly linked list)
+                                                             no index number
+                                                             Add and remove() methods are faster
+
+                                          1.3.  Vector : Array based class (same as ArrayList but a synchronized)
+                                                         Difference between ArrayList , Vector is synchronized
+                                                         Benefit being synchronized is that thread safety
+                                                         Disadvantage is that vector is going to be slower in multi-threading env.
+                                                         FIFO
+
+                                          1.4.  Stack :  Array based class (same as ArrayList but a synchronized)
+                                                         Difference between Vector, Stack order LIFO
+
+                            2. Set (I) :  Does not have index, Duplicates does not allowed
+
+                                        2.1. HashSet : (class) implements Set interface, compering to the other Sets this one is faster
+                                                        random order, accepts null
+
+                                        2.2. LinkedHashSet :  (class) implements Set interface
+                                                               it keeps the insertion order, accepts null
+
+                                        2.3. TreeSet : (class) implements SortedSet interface
+                                                        SortedSet interface extends Set interface
+                                                        does not accepts null
+                                                        it sorts the elements in order to ascending order
+
+
+                            3. Queue (I) :
+
+ Synchronized : Multiple threads are being executed one thread at a time
+                advantage -->  thread-safety
+                disadvantage --> slower
+
+ Process : Execution instance of program application
+
+ Thread : A sequence of execution within a process
+
+ NOTE :  In order to cast one collection type to another we need to use constructor because there is no IS-A
+         relation between Collection Types
+                Collection ---> List  --->Queue   ---> Set
+
+------------------------------------------------------------------------------------------------------------------------
+Array & ArrayList ?
+ArrayList & LinkedList?

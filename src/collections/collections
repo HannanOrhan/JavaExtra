@@ -1,0 +1,75 @@
+What is Collection?
+Collection is a group of individual objects as a single entity
+Defines several classes and interfaces which can be used to represent a group of objects as single entity
+Size is dynamic, can increase and decrease the size.
+Standard data structure and there are ready methods to use
+Does not support primitives, ONLY non-primitives
+
+Collection1 = Student1, Student2, Student3 .....Student9
+
+ --------------------------------------------COLLECTION METHODS------------------------------------------------------
+
+    Collection == Root interface
+    Collection interface defines the most common methods which applicable for any collection object.
+
+    size()            isEmpty()              add()
+    addAll()          remove()               removeAll()
+    removeIf()        contains()             containsAll()
+    retainAll()       clear()                toArray()
+
+  --------------------------------------------------------------------------------------------------------------------
+         NOTE : We can use constructor in order to cast one collection type to another
+                Except Stack because Stack's constructor is empty
+                We can use methods comes from reference type, if we want to use specific methods --> use downCasting
+
+
+                                         Iterable(Interface)
+                                         Collections(Interface)
+         List-I                            Queue-I                           Set-I
+         -----                            ----------                        ------
+         ArrayList-C                      -PriorityQueue-C                  -HashSet-C
+         LinkedList-C                     DeQue(Interface)                  -LinkedHashSet-C
+         Vector-C                         -ArrayDue-C                        SortedSet(interface)
+         Stack-C                                                             -TreeSet - C
+
+  --------------------------------------------------------------------------------------------------------------------
+  import java.util.List;
+
+  LIST(I) : Allows duplicates
+            Insertion order preserve
+            It has index number,except LinkedList because LinkedList is node-based
+            Accepts null
+
+        ArrayList : Internally uses array(array based)
+                    sorting & searching(retrieving) the element is faster
+                    Multi thread
+
+        LinkedList : It is ONLY collection class that implements 2 interface (Queue & List)
+                     Insertion & deletion the element is faster
+                     Internally uses doubly linked list
+                     Linear searching run because of this reason accessing element slow(get)
+                     FIFO order, because implements Queue ( poll() from Queue )
+
+        Vector : Internally uses the array (array based)
+                 Synchronized(thread safe)  --> slower
+
+                Stack : Child of vector
+                        Synchronized - thread safe
+                        FILO / LIFO order
+                        Array based
+                        Ctrl + z or browser one back --> real life exmp.
+                        pop() - get and delete , push() - add
+                        Constructor is empty
+
+
+
+
+  PROCESS : An instance of a program running on a computer
+            A process has code, data, heap and other segments
+
+  THREAD : A subset of a process
+           Every single process at least have one thread
+           Shares all the resource of the process
+
+  SYNCHRONIZED : Process of controlling the access of the multiple threads to any shared resource
+                 ONLY one thread to access the shared resource at a time -- > Thread-safety
