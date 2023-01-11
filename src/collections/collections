@@ -114,3 +114,21 @@ Collection1 = Student1, Student2, Student3 .....Student9
 
   SYNCHRONIZED : Process of controlling the access of the multiple threads to any shared resource
                  ONLY one thread to access the shared resource at a time -- > Thread-safety
+
+
+  ----------------------------   ----------------------------   ----------------------------   -----------------------
+
+                                            ITERABLE > COLLECTIONS
+
+      Allows the object to be iterable by using Iterator
+      Iterator methods:  hasNext(), next(), remove()
+
+
+
+
+
+
+
+
+
+
