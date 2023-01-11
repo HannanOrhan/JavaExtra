@@ -70,7 +70,7 @@ Collection1 = Student1, Student2, Student3 .....Student9
         HashSet(C) : Random order
                      Faster than other Set classes - because of random order
                      Accepts null
-                     No duplicate
+                     X duplicate
 
 
             LinkedHashSet(C) : Child of HashSet(C)
@@ -79,7 +79,31 @@ Collection1 = Student1, Student2, Student3 .....Student9
                                X duplicates
 
         SortedSet(I) :
-            TreeSet(C) :
+
+            TreeSet(C) : Sorted order
+                         Does not accept null
+                         X duplicates
+
+
+ QUEUE(I) : X index number, except LinkedList
+            Insertion order not preserved
+            Duplicates are allowed - all
+            FIFO ORDER - ticket or market line
+            *ONLY Queue has FIFO order in Collections
+            There is special method poll() -return & remove first element
+
+       PriorityQueue (C) : Random order
+                                           no null
+                                           duplicates are allowed
+                                           no index number
+
+                Deque (I) : Maintain insertion order
+                            Does not accept null
+
+
+                       ArrayDeque (C) : keeps insertion order
+                                        implicitly use array but we can not use get method
+                                        no index number
 
   PROCESS : An instance of a program running on a computer
             A process has code, data, heap and other segments
