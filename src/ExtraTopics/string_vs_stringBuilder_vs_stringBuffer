@@ -1,0 +1,29 @@
+String Class --------------------------------------------------------------------
+
+An object that represents sequences of characters
+It is immutable, Once the object is created it can not be modified
+There are 2 ways to create String object:
+    -By String literal
+        String literal stored in Heap at he String Pool.
+        String str = "Wooden Spoon";
+
+    -By new keyword
+        String str = new String("Java");
+
+String Builder Class --------------------------------------------------------------------
+
+An object that represents sequences of characters
+It is mutable, Once the object is created it can be modified
+It is not synchronized
+There are Only way to create :
+        -By new keyword
+        StringBuilder sb = new StringBuilder("Wooden Spoon);
+
+String Buffer Class --------------------------------------------------------------------
+
+An object that represents sequences of characters
+It is mutable, Once the object is created it can be modified
+It is synchronized
+There are Only way to create :
+        -By new keyword
+        StringBuffer sb = new StringBuffer("Wooden Spoon);
