@@ -1,0 +1,10 @@
+Enum
+Enum represents a group of constants(number of things)
+Used for containing fixed set of constant
+
+Seasons :               Directions:
+    Spring                   East
+    Summer                   West
+    Fall                     North
+    Winter                   South
+
