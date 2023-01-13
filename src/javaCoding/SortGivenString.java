@@ -15,9 +15,7 @@ public class SortGivenString {
                 str+= c;
             }
         }
-        System.out.println(str);
         ArrayList<String> list = new ArrayList<>(Arrays.asList(str.toLowerCase().split(" ")));
-        System.out.println(list);
         Collections.sort(list);
         for (String eachString : list) {
             String tmp = eachString;
