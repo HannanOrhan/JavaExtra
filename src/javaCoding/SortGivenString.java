@@ -6,16 +6,21 @@ import java.util.Collections;
 
 public class SortGivenString {
     public static void main(String[] args) {
-
-        String strFirst = "i Love4 to Ga2me!";
+        String strFirst = "Blizzard is a 3 place I want 2 work @t";
         String str = "";
-
         for (char c : strFirst.toCharArray()) {//clean digits and chars
             if (!(c>=33 && c<65)){
                 str+= c;
             }
         }
         ArrayList<String> list = new ArrayList<>(Arrays.asList(str.toLowerCase().split(" ")));
+        ArrayList<String> remove = new ArrayList<>();
+        for (String s : list) {
+            if (s.length() == 0){
+                remove.add(s);
+            }
+        }
+        list.removeAll(remove);
         Collections.sort(list);
         for (String eachString : list) {
             String tmp = eachString;
@@ -27,7 +32,6 @@ public class SortGivenString {
                 }
             }
             if (eachString.contains(".")) {
-
                 tmp2 = list.get(list.size()-1) ;
                 tmp = list.get(eachString.indexOf(eachString));
                 list.set(list.size()-1,tmp);
