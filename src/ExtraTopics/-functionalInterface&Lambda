@@ -1,0 +1,35 @@
+Functional Interface----------------------------------------------------------------------------------------------------
+
+There is only one abstract method in the interface
+Effectively acts as a function
+@FunctionalInterface --> annotation is applicable(optional)
+We are not using for inheritance purpose, we use for function purpose
+
+Lambda Expression-------------------------------------------------------------------------------------------------------
+A function with no name and an identifier
+Can be defined in the place where they are needed
+Express the instance of a functional interface
+
+(parameters) -> {
+         //Statements
+};
+
+If there is only one parameter parenthesis are not necessary
+
+@FunctionalInterface
+public interface MyFunctionalInterface {
+    void  function(int a);
+    //void function2(String s);
+    //we can declare only one abstract-method
+    //Method overloading is not allowed
+}
+
+public class TestMyFunctionalInterface {
+    public static void main(String[] args) {
+        MyFunctionalInterface displayNum = a -> {//if there is one parameter parenthesis are not necessary
+            System.out.println(a*100);
+        };
+
+        displayNum.function(3);
+    }
+}
