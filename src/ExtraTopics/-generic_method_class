@@ -1,0 +1,49 @@
+Generics
+PParameterized types
+Allows us reuse the same code with different types
+We can apply to method, class and interface
+
+Generic Method----------------------------------------------------------------------------------------------------------
+Instead of multiple separate methods for each data type we'll use generic method
+
+public class Generics {
+
+    public static <AnyName> void printEach(AnyName[] array){//this array can be any type of array
+        for (AnyName each : array) {
+            System.out.println(each);
+        }
+    }
+
+    public static <T> void printEach(List<T> list){
+        for (T each : list) {
+            System.out.println(each);
+        }
+    }
+}
+
+Generic Class-----------------------------------------------------------------------------------------------------------
+We can pass generic also to the class
+Generic class online can be defined only we create object and because of that reason we can not make method static
+It should be instance method
+
+public class Generics2<T> {
+    public  void printEach(T[] array){//this array can be any type of array
+        for (T each : array) {
+            System.out.println(each);
+        }
+    }
+
+    public  <T> void printEach(List<T> list){
+        for (T each : list) {
+            System.out.println(each);
+        }
+    }
+}
+
+When we create generic type object we need to pass generic type
+
+        Integer[] n = {1,2,3,4,5};
+        ArrayList<Integer> ln = new ArrayList<>(Arrays.asList(n));
+        Generics2<Integer> generics_int = new Generics2<>();
+
+Generic Interface-------------------------------------------------------------------------------------------------------
